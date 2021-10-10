@@ -20,7 +20,6 @@ def ctext(text, color=None):
             c = Fore.BLACK+str(text)+Fore.RESET
         elif color == "white":
             c = Fore.WHITE+str(text)+Fore.RESET
-        return c
     return c
 
 def cprint(text, color=None):
