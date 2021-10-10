@@ -1,37 +1,45 @@
 from colorama import Fore
 
-def wrap(cls):
-    def wrapper(*args, **kwargs):
-        obj = cls(*args, **kwargs)
-        obj.print()
+def ctext(text, color=None):
+    if color == None:
+        c = str(text)
+    else:
+        if color == "red":
+            c = Fore.RED+str(text)+Fore.RESET
+        elif color == "yellow":
+            c = Fore.YELLOW+str(text)+Fore.RESET
+        elif color == "green":
+            c = Fore.GREEN+str(text)+Fore.RESET
+        elif color == "blue":
+            c = Fore.BLUE+str(text)+Fore.RESET
+        elif color == "cyan":
+            c = Fore.CYAN+str(text)+Fore.RESET
+        elif color == "purple":
+            c = Fore.MAGENTA+str(text)+Fore.RESET
+        elif color == "black":
+            c = Fore.BLACK+str(text)+Fore.RESET
+        elif color == "white":
+            c = Fore.WHITE+str(text)+Fore.RESET
+        return c
+    return c
 
-    return wrapper
-
-@wrap
-class Message:
-    def __init__(self, text, color=None):
-        self.text = text
-        self.color = color
-
-    def print(self):
-        if self.color == None:
-            print(self.text)
-        else:
-            if self.color == "red":
-                print(Fore.RED+self.text)
-                print(Fore.RESET)
-            elif self.color == "yellow":
-                print(Fore.YELLOW+self.text)
-                print(Fore.RESET)
-            elif self.color == "green":
-                print(Fore.GREEN+self.text)
-                print(Fore.RESET)
-            elif self.color == "blue":
-                print(Fore.BLUE+self.text)
-                print(Fore.RESET)
-            elif self.color == "black":
-                print(Fore.BLACK+self.text)
-                print(Fore.RESET)
-            elif self.color == "white":
-                print(Fore.WHITE+self.text)
-                print(Fore.RESET)
+def cprint(text, color=None):
+    if color == None:
+        print(str(text))
+    else:
+        if color == "red":
+            print(Fore.RED+str(text)+Fore.RESET)
+        elif color == "yellow":
+            print(Fore.YELLOW+str(text)+Fore.RESET)
+        elif color == "green":
+            print(Fore.GREEN+str(text)+Fore.RESET)
+        elif color == "blue":
+            print(Fore.BLUE+str(text)+Fore.RESET)
+        elif color == "cyan":
+            print(Fore.CYAN+str(text)+Fore.RESET)
+        elif color == "purple":
+            print(Fore.MAGENTA+str(text)+Fore.RESET)
+        elif color == "black":
+            print(Fore.BLACK+str(text)+Fore.RESET)
+        elif color == "white":
+            print(Fore.WHITE+str(text)+Fore.RESET)
