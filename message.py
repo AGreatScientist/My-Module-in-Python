@@ -1,25 +1,27 @@
-from colorama import Fore
+from colors import *
 
 def ctext(text, color=None):
     if color == None:
         c = str(text)
     else:
         if color == "red":
-            c = Fore.RED+str(text)+Fore.RESET
+            c = RED+str(text)+END
         elif color == "yellow":
-            c = Fore.YELLOW+str(text)+Fore.RESET
+            c = YELLOW+str(text)+END
         elif color == "green":
-            c = Fore.GREEN+str(text)+Fore.RESET
+            c = GREEN+str(text)+END
         elif color == "blue":
-            c = Fore.BLUE+str(text)+Fore.RESET
+            c = BLUE+str(text)+END
         elif color == "cyan":
-            c = Fore.CYAN+str(text)+Fore.RESET
+            c = CYAN+str(text)+END
+        elif color == "darkcyan":
+            c = DARKCYAN+str(text)+END
         elif color == "purple":
-            c = Fore.MAGENTA+str(text)+Fore.RESET
-        elif color == "black":
-            c = Fore.BLACK+str(text)+Fore.RESET
-        elif color == "white":
-            c = Fore.WHITE+str(text)+Fore.RESET
+            c = PURPLE+str(text)+END
+        elif color == "bold":
+            c = BOLD+str(text)+END
+        elif color == "underline":
+            c = UNDERLINE+str(text)+END
     return c
 
 def cprint(text, color=None):
@@ -27,18 +29,20 @@ def cprint(text, color=None):
         print(str(text))
     else:
         if color == "red":
-            print(Fore.RED+str(text)+Fore.RESET)
+            print(RED+str(text)+END)
         elif color == "yellow":
-            print(Fore.YELLOW+str(text)+Fore.RESET)
+            print(YELLOW+str(text)+END)
         elif color == "green":
-            print(Fore.GREEN+str(text)+Fore.RESET)
+            print(GREEN+str(text)+END)
         elif color == "blue":
-            print(Fore.BLUE+str(text)+Fore.RESET)
+            print(BLUE+str(text)+END)
         elif color == "cyan":
-            print(Fore.CYAN+str(text)+Fore.RESET)
+            print(CYAN+str(text)+END)
+        elif color == "darkcyan":
+            print(DARKCYAN+str(text)+END)
         elif color == "purple":
-            print(Fore.MAGENTA+str(text)+Fore.RESET)
-        elif color == "black":
-            print(Fore.BLACK+str(text)+Fore.RESET)
-        elif color == "white":
-            print(Fore.WHITE+str(text)+Fore.RESET)
+            print(PURPLE+str(text)+END)
+        elif color == "bold":
+            print(BOLD+str(text)+END)
+        elif color == "underline":
+            print(UNDERLINE+str(text)+END)
