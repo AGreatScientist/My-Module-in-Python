@@ -1,3 +1,6 @@
+# Версия модуля 1.1.1
+
+
 from colors import *
 
 def ctext(text, color=None):
@@ -22,10 +25,14 @@ def ctext(text, color=None):
             c = BOLD+str(text)+END
         elif color == "underline":
             c = UNDERLINE+str(text)+END
+        else:
+            raise SyntaxError(RED+str('Такого цвета не существует!\nВсе цвета:\nred\nyellow\ngreen\nblue\ncyan\ndarkcyan\nbold\nunderline')+END)
     return c
 
-def cprint(text, color=None):
-    if color == None:
+def cprint(text=None, color=None):
+    if not text:
+        raise TypeError(RED+str('Не найден аргумент text (text="Hello world!")')+END)
+    elif not color:
         print(str(text))
     else:
         if color == "red":
@@ -46,3 +53,5 @@ def cprint(text, color=None):
             print(BOLD+str(text)+END)
         elif color == "underline":
             print(UNDERLINE+str(text)+END)
+        else:
+            raise SyntaxError(RED+str('Такого цвета не существует!\nВсе цвета:\nred\nyellow\ngreen\nblue\ncyan\ndarkcyan\nbold\nunderline')+END)
